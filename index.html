@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resto - Fine Dining</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+            min-height: 100vh;
+        }
+        
+        .menu-item {
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #F59E0B;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .gallery-img {
+            transition: all 0.3s ease;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-900/95 backdrop-blur">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <img src="logo.png" alt="Logo Resto" class="h-12">
+                    <span class="ml-3 text-2xl font-bold text-amber-500">Resto</span>
+                </div>
+
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="nav-link text-white hover:text-amber-500">Accueil</a>
+                    <a href="#menu" class="nav-link text-white hover:text-amber-500">Menu</a>
+                    <a href="#galerie" class="nav-link text-white hover:text-amber-500">Galerie</a>
+                    <a href="#contact" class="nav-link text-white hover:text-amber-500">Contact</a>
+                    <a href="#reservation" class="bg-amber-500 text-white px-6 py-2 rounded-lg hover:bg-amber-600 transition-colors">
+                        Réserver
+                    </a>
+                </div>
+
+                <button class="md:hidden text-white">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                        Savourez une<br/>
+                        <span class="text-amber-500">Expérience Unique</span>
+                    </h1>
+                    <p class="text-xl text-gray-300 mb-8">
+                        Une cuisine raffinée qui éveille vos sens. Découvrez notre carte gastronomique dans un cadre exceptionnel.
+                    </p>
+                    <div class="space-x-4">
+                        <a href="#reservation" class="bg-amber-500 text-white px-8 py-3 rounded-lg hover:bg-amber-600 transition-colors">
+                            Réserver une table
+                        </a>
+                        <a href="#menu" class="border border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-gray-900 transition-colors">
+                            Voir le menu
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <img src="img1.png" alt="Plat Signature" class="rounded-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-4">Notre Menu</h2>
+            <p class="text-center text-gray-400 mb-12">Découvrez nos créations culinaires</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Entrées -->
+                <div class="menu-item bg-gray-800 rounded-lg overflow-hidden">
+                    <img src="img2.jpg" alt="Entrées" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-4">Entrées</h3>
+                        <ul class="space-y-4">
+                            <li class="flex justify-between">
+                                <span>Carpaccio de Saint-Jacques</span>
+                                <span class="text-amber-500">24€</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Foie Gras Maison</span>
+                                <span class="text-amber-500">28€</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Plats -->
+                <div class="menu-item bg-gray-800 rounded-lg overflow-hidden">
+                    <img src="img3.jpg" alt="Plats" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-4">Plats</h3>
+                        <ul class="space-y-4">
+                            <li class="flex justify-between">
+                                <span>Filet de Bœuf Rossini</span>
+                                <span class="text-amber-500">42€</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Homard Bleu</span>
+                                <span class="text-amber-500">56€</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-item bg-gray-800 rounded-lg overflow-hidden">
+                    <img src="img4.jpeg" alt="Desserts" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-4">Desserts</h3>
+                        <ul class="space-y-4">
+                            <li class="flex justify-between">
+                                <span>Soufflé au Chocolat</span>
+                                <span class="text-amber-500">16€</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Crème Brûlée</span>
+                                <span class="text-amber-500">14€</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie Section -->
+    <section id="galerie" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12">Notre Galerie</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="/api/placeholder/300/300" alt="Photo 1" class="gallery-img w-full h-64 object-cover rounded-lg">
+                <img src="/api/placeholder/300/300" alt="Photo 2" class="gallery-img w-full h-64 object-cover rounded-lg">
+                <img src="/api/placeholder/300/300" alt="Photo 3" class="gallery-img w-full h-64 object-cover rounded-lg">
+                <img src="/api/placeholder/300/300" alt="Photo 4" class="gallery-img w-full h-64 object-cover rounded-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Réservation Section -->
+    <section id="reservation" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-4">Réserver une Table</h2>
+                <p class="text-center text-gray-400 mb-8">Réservez votre table en quelques clics</p>
+                
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Nom</label>
+                            <input type="text" class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Date</label>
+                            <input type="date" class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Heure</label>
+                            <input type="time" class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-amber-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Message (optionnel)</label>
+                        <textarea rows="4" class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-amber-500"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-amber-500 text-white px-8 py-3 rounded-lg hover:bg-amber-600 transition-colors">
+                            Réserver
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Resto</h3>
+                    <p class="text-gray-400">Une expérience gastronomique unique</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>12 rue de la Gastronomie</li>
+                        <li>75001 Paris</li>
+                        <li>Tel: 01 23 45 67 89</li>
+                        <li>Email: contact@resto.fr</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium mb-4">Horaires</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Lundi - Vendredi</li>
+                        <li>12:00 - 14:30 | 19:00 - 22:30</li>
+                        <li>Samedi - Dimanche</li>
+                        <li>19:00 - 23:00</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium mb-4">Suivez-nous</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-amber-500">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c
